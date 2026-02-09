@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "zenficore",
+    "apps.users",
+    "apps.feedback",
+    "apps.tasks",
+    "apps.work_sessions",
 ]
 
 MIDDLEWARE = [
