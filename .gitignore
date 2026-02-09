@@ -1,24 +1,47 @@
+# ===========================
 # Python / Django
+# ===========================
+# Virtual environment
 backend/venv/
+# Bytecode
 *.pyc
-__pycache__/
 *.pyo
 *.pyd
+__pycache__/
+# SQLite database (if any)
 *.sqlite3
+# Environment variables
 *.env
+# Django static files
+backend/staticfiles/
+# Django media files
+backend/media/
 
+# ===========================
 # Node / React
+# ===========================
+# Node modules
 frontend/node_modules/
+# Build folder
 frontend/build/
+# Env file
 frontend/.env
 
-# IDEs
+# ===========================
+# IDEs / Editors
+# ===========================
 .vscode/
 .idea/
+*.sublime-workspace
+*.sublime-project
 
-# OS files
+# ===========================
+# OS / System
+# ===========================
 .DS_Store
 Thumbs.db
 
+# ===========================
 # Logs
+# ===========================
 *.log
