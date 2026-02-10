@@ -21,7 +21,7 @@ The goal of Zenfi is to **empower users to manage their time and productivity mo
 ## Project Structure
 
 ```
-Zenfi/
+zenfi/
 ├── backend/             # Django backend
 │   ├── manage.py
 │   ├── ZenfiCore/       # Django project settings

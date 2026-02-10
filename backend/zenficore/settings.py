@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "apps.feedback",
     "apps.tasks",
     "apps.work_sessions",
+    "rest_framework",
+    "rest_framework.authtoken", 
+    "corsheaders",  
 ]
 
 MIDDLEWARE = [
@@ -77,12 +80,21 @@ WSGI_APPLICATION = "zenficore.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import os
+from decouple import config
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("PGDATABASE", default="railway"),
+        "USER": config("PGUSER", default="postgres"),
+        "PASSWORD": config("PGPASSWORD", default=""),
+        "HOST": config("PGHOST", default="localhost"),
+        "PORT": config("PGPORT", default="5432"),
     }
 }
+
+
 
 
 # Password validation
@@ -125,3 +137,12 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+AUTH_USER_MODEL = "users.User"
+
+from datetime import timedelta
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
